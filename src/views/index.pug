@@ -1,0 +1,32 @@
+extends layout.pug
+block scripts
+    script.
+        function onCopy(){
+            console.log('copied!')
+        }
+block content
+    .container
+        .wrapper
+            header
+                div.logo Url Shortner
+                small shorten your long urls in snap!
+            form(action="/" method="POST")
+                div#labels 
+                    label
+                    label Expires In
+                div#inputs
+                    div 
+                        input#url(type='url' required name="url" placeholder="http://www.example.com")
+                        if errors && errors.url
+                            span.error=errors.url
+                    div
+                        input#expiryDate(type='date' name='expiryDate' required)
+                        if errors && errors.expiryDate
+                            span.error=errors.expiryDate
+                    button(type="submit") Get Short URL
+            if shortUrl
+                div#result
+                    h3 Copy your short url
+                    div#short-url
+                        p=shortUrl
+                        button('click'="onCopy()") copy

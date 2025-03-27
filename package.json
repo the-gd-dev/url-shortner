@@ -1,0 +1,36 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "copyfiles -f src/public/** dist/public && copyfiles -f src/public/css/** dist/public/css && copyfiles -f src/public/images/** dist/public/images",
+    "watch-assets": "chokidar \"src/public/**\" -c \"npm run copy-assets\"",
+    "dev": "concurrently \"npm run watch-assets\" \"nodemon --ext ts,pug,css --exec 'npm run build && node dist/index.js'\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "argon2": "^0.41.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.0",
+    "nodemon": "^3.1.9",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/connect-livereload": "^0.6.3",
+    "@types/express": "^5.0.1",
+    "@types/livereload": "^0.9.5",
+    "@types/node": "^22.13.13",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.1.2",
+    "connect-livereload": "^0.6.1",
+    "copyfiles": "^2.4.1",
+    "livereload": "^0.9.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2"
+  }
+}

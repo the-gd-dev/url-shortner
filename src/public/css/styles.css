@@ -1,0 +1,158 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10%;
+  height: 100%;
+  width: 100%;
+}
+.wrapper {
+  width: 80%;
+  padding: 8px;
+}
+
+header {
+  padding: 16px 0;
+}
+
+header small {
+  font-size: 16px;
+}
+
+.logo {
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Montserrat Underline", sans-serif;
+  text-align: left;
+}
+
+.wrapper form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper form div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.wrapper form div label {
+  width: 100%;
+  padding-left: 0.8rem;
+  font-family: 600;
+}
+.wrapper form div#labels {
+}
+input {
+  height: 35px;
+  width: 100%;
+  font-size: 16px;
+  text-indent: 8px;
+  outline: none;
+  border: #000 solid 1px;
+}
+input#expiryDate {
+}
+#inputs div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+#inputs div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+input#url {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+}
+
+button {
+  width: 10%;
+  min-width: 120px;
+  height: 37px;
+  background-color: #202020;
+  color: white;
+  outline: none;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+
+div#result {
+  padding: 20px 0;
+}
+div#result h3 {
+  padding-bottom: 0.25em;
+}
+#short-url {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: none;
+}
+#short-url p {
+  border: #e3e3e3 solid 1px;
+  background-color: #ffffff;
+  padding: 7px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+  width: 100%;
+  color: #292929;
+}
+#short-url button {
+  background: #e3e3e3;
+  color: #292929;
+}
+span.error {
+  padding: 6px 0;
+  color: #b30000;
+  font-weight: 500;
+  font-size: medium;
+}
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 40%;
+  }
+}
