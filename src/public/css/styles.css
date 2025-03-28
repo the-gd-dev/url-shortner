@@ -9,11 +9,24 @@ body {
   padding: 0;
   margin: 0;
 }
+
 #app {
   height: 100%;
   width: 100%;
+  position: relative;
 }
-
+.strap {
+  position: absolute;
+  padding: 8px;
+  font-size: 16px;
+  width: 400px;
+  text-align: center;
+  transform: rotate(-35deg);
+  background-color: #e05600;
+  color: #fff;
+  left: -100px;
+  top: 60px;
+}
 .container {
   display: flex;
   flex-direction: column;

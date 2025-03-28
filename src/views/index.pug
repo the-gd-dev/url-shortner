@@ -1,6 +1,17 @@
 extends layout.pug
 block scripts
     script.
+        document.addEventListener("DOMContentLoaded", function () {
+            const appDiv = document.getElementById("app");
+            if (appDiv) {
+                const div = document.createElement("div");
+                div.innerHTML = `Developed By <a href="https://github.com/the-gd-dev">@the-gd-dev</a>`;
+                div.classList.add("strap");
+                appDiv.appendChild(div);
+            } else {
+                console.error("Element with id 'app' not found!");
+            }
+        });
         function onCopy(){
             console.log('copied!')
         }
