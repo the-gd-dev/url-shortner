@@ -32,7 +32,7 @@ liveReloadServer.server.once("connection", () => {
 app.use(connectLivereload());
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "../src/views")); // Pug files remain in `src/views`
+app.set("views", path.join(__dirname, "src/views")); // Pug files remain in `src/views`
 
 app.use("/public", express.static(publicDir));
 
@@ -112,8 +112,12 @@ app.get("/:url_hash", async (req: Request, res: Response) => {
   res.send("some issue occured or url not found!");
 });
 
-app.get("/", (req, res) => {
-  res.status(200).send("✅ Railway is working!");
+app.get("/", (req: Request, res: Response) => {
+  res.render("index", {
+    title: "Welcome to PUG!",
+    message: "Hello World!",
+    errors: {},
+  });
 });
 
 mongoose
