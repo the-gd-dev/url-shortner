@@ -128,5 +128,7 @@ mongoose
     });
   })
   .catch((error) => {
+    console.log(error);
+    
     console.log("Error while connecting to mongo database.");
   });
