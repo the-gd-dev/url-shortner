@@ -112,12 +112,8 @@ app.get("/:url_hash", async (req: Request, res: Response) => {
   res.send("some issue occured or url not found!");
 });
 
-app.get("/", (req: Request, res: Response) => {
-  res.render("index", {
-    title: "Welcome to PUG!",
-    message: "Hello World!",
-    errors: {},
-  });
+app.get("/", (req, res) => {
+  res.status(200).send("✅ Railway is working!");
 });
 
 mongoose
