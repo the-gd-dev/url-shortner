@@ -4,13 +4,14 @@ import livereload from "livereload";
 import connectLivereload from "connect-livereload";
 import mongoose from "mongoose";
 import argon2 from "argon2";
-import { error } from "console";
+import dotenv from "dotenv";
 
 const shortenUrl = require("./models/ShortenUrl");
+dotenv.config();
 
 const app = express();
-const PORT = 8080;
-const MONGO_URL = "mongodb://localhost:27017/shorturls";
+const PORT = process.env.PORT || 8080;
+const MONGO_URL = process.env.MONGO_URL!;
 app.use(express.urlencoded({ extended: true }));
 
 const distDir = path.resolve(__dirname, "../dist");
@@ -62,9 +63,9 @@ app.post("/", async (req: Request, res: Response) => {
   }
 
   const hashedUrl = await argon2.hash(originalUrl, {
-    salt: Buffer.from("xy12abcdef"), // ideally, generate this randomly
-    secret: Buffer.from("xyz123abc"), // move to env var for safety
-    hashLength: 6, // 48-bit hash is safer
+    salt: Buffer.from(process.env.SALT!),
+    secret: Buffer.from(process.env.SECRET!),
+    hashLength: 6,
     type: argon2.argon2id,
   });
 
