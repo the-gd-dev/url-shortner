@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "build": "tsc && npm run copy-assets && npm run copy-views",
-    "copy-assets": "copyfiles -u 1 src/public/**/* dist/public",
-    "copy-views": "copyfiles -u 2 src/views/**/*.pug dist/src/views",
-    "start": "node dist/index.js"
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "copyfiles -f src/public/** dist/public && copyfiles -f src/public/css/** dist/public/css && copyfiles -f src/public/images/** dist/public/images",
+    "watch-assets": "chokidar \"src/public/**\" -c \"npm run copy-assets\"",
+    "dev": "concurrently \"npm run watch-assets\" \"nodemon --ext ts,pug,css --exec 'npm run build && node dist/index.js'\""
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "argon2": "^0.41.1",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.13.0",
     "nodemon": "^3.1.9",
