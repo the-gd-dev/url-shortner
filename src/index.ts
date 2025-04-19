@@ -32,7 +32,7 @@ liveReloadServer.server.once("connection", () => {
 app.use(connectLivereload());
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "src/views")); // Pug files remain in `src/views`
+app.set("views", path.join(__dirname, "../src/views")); // Pug files remain in `src/views`
 
 app.use("/public", express.static(publicDir));
 
@@ -129,6 +129,6 @@ mongoose
   })
   .catch((error) => {
     console.log(error);
-    
+
     console.log("Error while connecting to mongo database.");
   });

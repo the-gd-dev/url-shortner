@@ -27,6 +27,12 @@ body {
   left: -100px;
   top: 60px;
 }
+
+.strap a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
